@@ -2,15 +2,26 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="org.scratchjr.android">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <!-- allows apps to connect to bluetooth -->
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <!-- allows apps to discover and pair to bluetooch peripherals -->
+    <uses-permission android:name="android.permissions.BLUETOOTH_ADMIN"/>
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.RECORD_AUDIO"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
     <uses-feature android:name="android.hardware.camera" android:required="false" />
     <uses-feature android:name="android.hardware.microphone" android:required="false" />
-    <uses-feature android:name="android.hardware.touchscreen" android:required="true" />
+    <!-- touchscreen.requried set to false, as this opens up what can be used -->
+    <uses-feature android:name="android.hardware.touchscreen" android:required="false" />
+    <!-- faketouch.requried set to false, allows more than just touchscreen or mouse input-->
+    <uses-feature android:name="android.hardward.faketouch" android:required="false"/>
+    <!-- enables bluetooth peripherals -->
+    <uses-feature android:name="android.hardware.bluetooth" android:required="false"/>
+    <!-- enables usb peripherals -->
+    <uses-feature android:name="android.hardware.usb.accessory" android:required="false"/>
 
     <supports-screens android:requiresSmallestWidthDp="600" />
     <application
